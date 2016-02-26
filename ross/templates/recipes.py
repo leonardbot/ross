@@ -36,7 +36,7 @@ en_templates = (
                 (r'(i |i (am|\'m)? )?(want|need|must|should) ?(to)? cook (.+)',
                  lambda m: {'type': 'recipes',
                             'subtype': 'search',
-                            'action': 'info',
+                            'action': 'plans',
                             'query': m.group(5)}),
                 # I will cook a cake
                 (r'i((\'m| am) plann?(ing)? to| will) cook (.+)',
@@ -44,4 +44,10 @@ en_templates = (
                             'subtype': 'search',
                             'action': 'plans',
                             'query': m.group(4)}),
+                # Search for cake recipes
+                (r'search for (.+) recipes?',
+                 lambda m: {'type': 'recipes',
+                            'subtype': 'search',
+                            'action': 'question',
+                            'query': m.group(1)}),
                )
