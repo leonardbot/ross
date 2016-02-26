@@ -7,6 +7,26 @@
 Copyright (C) 2015
 """
 
+LANGUAGE_CODE = {
+    'mandarin': 'zh',
+    'chinese': 'zh',
+    'traditional chinese': 'zh',
+    'spanish': 'es',
+    'hindi': 'hi',
+    'arabic': 'ar',
+    'portuguese': 'pt',
+    'bengali': 'bn',
+    'russian': 'ru',
+    'japanese': 'ja',
+    'punjabi': 'pa',
+    'german': 'de',
+    'french': 'fr',
+    'korean': 'ko',
+    'turkish': 'tr',
+    'polish': 'pl',
+    'armenian': 'hy'
+}
+
 EN_LANGUAGE_LIST = '|'.join(('mandarin', 'chinese', 'traditional chinese',
                              'spanish', 'hindi', 'arabic', 'portuguese',
                              'bengali', 'russian', 'japanese', 'punjabi',
@@ -20,5 +40,5 @@ en_templates = (
                             'subtype': 'to_another_lang',
                             'action': 'question',
                             'query': m.group(2),
-                            'language': m.group(3)}),
+                            'language': LANGUAGE_CODE[m.group(3)]}),
                )

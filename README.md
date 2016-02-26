@@ -17,15 +17,23 @@ pip3 install ross
 ## Data types
 
 #### Recipes
-*subtypes*: search/recommend
+*subtype*: search/recommend
 
 *query*: name of dish
 
 *action*: question/plan/request
 
 #### Places
-*subtypes*: search/recommend
+*subtype*: search/recommend
 
 *query*: name of place, from cafe name to country name
 
 *action*: question/plan/request
+
+#### Translate
+
+*subtype*: to_another_lang/to_user_lang
+
+*query*: phrase to translate
+
+*language*: if subtype == to_another_lang, language code for translation
