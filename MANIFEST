@@ -2,5 +2,7 @@
 setup.cfg
 setup.py
 ross/__init__.py
+ross/templates/notes.py
 ross/templates/places.py
 ross/templates/recipes.py
+ross/templates/translate.py

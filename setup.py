@@ -7,7 +7,7 @@ setup(
   author = 'Seva Zhidkov',
   author_email = 'zhidkovseva@gmail.com',
   url = 'https://github.com/leonardbot/ross',
-  download_url = 'https://github.com/leonardbot/ross/tarball/0.1.0',
+  download_url = 'https://github.com/leonardbot/ross/tarball/0.1.1',
   keywords = ['nlp', 'language', 'bot'],
   classifiers = [],
 )
