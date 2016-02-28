@@ -4,7 +4,7 @@
 @author: Seva Zhidkov
 @contact: zhidkovseva@gmail.com
 @license: Apache License 2.0
-@version: 0.1.0
+@version: 0.1.1
 Copyright (C) 2015
 """
 
@@ -89,13 +89,12 @@ def find_templates():
 
 def normalize_message(message_text):
     """
-    Lowercase text, remove punctuation marks, articles
+    Remove punctuation marks, articles
     and bot appeals (like 'hey bot')
 
     :param message_text: user's message text
     :return: normalized message text
     """
-    message_text = message_text.lower()
     for mark in PUNCTUATION_MARKS:
         message_text = message_text.replace(mark, ' ')
     # Add barier elements for not deleting middle of word
@@ -119,7 +118,7 @@ def process_message(message_text):
     """
     message_text = normalize_message(message_text)
     for (regex, data_lambda) in TEMPLATES:
-        match = regex.match(message_text)
+        match = regex.match(message_text, re.IGNORECASE)
         if match:
             result = Request(**data_lambda(match))
             return result
