@@ -83,7 +83,7 @@ def find_templates():
         for (name, content) in template_module.__dict__.items():
             if name.endswith('templates'):
                 for (regex_text, data_func) in content:
-                    templates.append((re.compile(regex_text), data_func))
+                    templates.append((re.compile(regex_text, re.IGNORECASE), data_func))
     return templates
 
 
@@ -118,7 +118,7 @@ def process_message(message_text):
     """
     message_text = normalize_message(message_text)
     for (regex, data_lambda) in TEMPLATES:
-        match = regex.match(message_text, re.IGNORECASE)
+        match = regex.match(message_text)
         if match:
             result = Request(**data_lambda(match))
             return result

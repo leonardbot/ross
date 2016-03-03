@@ -65,7 +65,7 @@ ru_templates = (
                             'action': 'request',
                             'query': m.group(3)}),
                 # Создай заметку о завтрешней презентации
-                (r'(создай|добавь) заметк(а|у) (.+)',
+                (r'(создай |добавь )?заметк(а|у) (.+)',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
