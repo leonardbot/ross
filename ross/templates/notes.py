@@ -82,5 +82,17 @@ ru_templates = (
                             'subtype': 'add',
                             'action': 'request',
                             'query': m.group(3)}),
+                # Создай заметку
+                (r'(создай|добавь) заметку',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'add',
+                            'action': 'request',
+                            'query': None}),
+                # Запиши
+                (r'(запиши|запомни)',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'add',
+                            'action': 'request',
+                            'query': None}),
 
                )
