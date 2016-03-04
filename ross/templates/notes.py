@@ -30,6 +30,18 @@ en_templates = (
                             'subtype': 'add',
                             'action': 'request',
                             'query': m.group(6)}),
+                # Write I should go to doctor
+                (r'write ?(.+)?',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'add',
+                            'action': 'request',
+                            'query': m.group(1)}),
+                # Create new note
+                (r'(create )?(new )?note',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'add',
+                            'action': 'request',
+                            'query': None}),
                )
 
 ru_templates = (
@@ -70,4 +82,5 @@ ru_templates = (
                             'subtype': 'add',
                             'action': 'request',
                             'query': m.group(3)}),
+
                )
