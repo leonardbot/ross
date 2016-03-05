@@ -8,6 +8,22 @@ Copyright (C) 2015
 """
 
 en_templates = (
+                # My last notes
+                (r'(my )?(last )?notes',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'view',
+                            'action': 'request',
+                            'position': 'last',
+                            'number': 10,
+                            'query': None}),
+                # My last note
+                (r'(my )?last note',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'view',
+                            'action': 'request',
+                            'position': 'last',
+                            'number': 1,
+                            'query': None}),
                 # Note number #1
                 (r'note( number)? (\#)?(\d+)',
                  lambda m: {'type': 'notes',
@@ -90,22 +106,6 @@ en_templates = (
                             'action': 'request',
                             'position': 'last',
                             'number': int(m.group(3)),
-                            'query': None}),
-                # My last notes
-                (r'(my )?(last )?notes',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'last',
-                            'number': 10,
-                            'query': None}),
-                # My last note
-                (r'(my )?last note',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'last',
-                            'number': 1,
                             'query': None}),
                )
 
