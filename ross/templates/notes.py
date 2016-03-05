@@ -73,14 +73,6 @@ en_templates = (
                             'action': 'request',
                             'position': 'choice',
                             'query': None}),
-                # My last note
-                (r'(my )?last note',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'last',
-                            'number': 1,
-                            'query': None}),
                 # My last 5 notes
                 (r'(my )?(last )?(\d+) notes',
                  lambda m: {'type': 'notes',
@@ -96,6 +88,14 @@ en_templates = (
                             'action': 'request',
                             'position': 'last',
                             'number': 10,
+                            'query': None}),
+                # My last note
+                (r'(my )?last note',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'view',
+                            'action': 'request',
+                            'position': 'last',
+                            'number': 1,
                             'query': None}),
                 # #1 note
                 (r'\#?(\d+) note',
