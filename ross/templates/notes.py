@@ -43,11 +43,11 @@ en_templates = (
                             'id': int(m.group(1)),
                             'query': None}),
                 # I am planning to watch Friends series
-                (r'i(\'m| am)? (want|planning) to watch (.+) (series|film|movie)$',
+                (r'i(\'m| am)? (want|planning)( to)? watch (.+)',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'info',
-                            'query': 'Watch «{}»'.format(
+                            'query': 'Watch {}'.format(
                                 m.group(3).capitalize()
                             ),
                             'movie': m.group(3)}),
