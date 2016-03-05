@@ -17,6 +17,15 @@ en_templates = (
                             'number': 1,
                             'id': int(m.group(3)),
                             'query': None}),
+                # #1 note
+                (r'\#?(\d+) note',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'view',
+                            'action': 'request',
+                            'position': 'id',
+                            'number': 1,
+                            'id': int(m.group(1)),
+                            'query': None}),
                 # I am planning to watch Friends series
                 (r'i(\'m| am)? (want|planning) to watch (.+) (series|film|movie)$',
                  lambda m: {'type': 'notes',
@@ -52,7 +61,7 @@ en_templates = (
                             'action': 'request',
                             'query': None}),
                 # All notes
-                (r'all notes',
+                (r'(all )?notes',
                  lambda m: {'type': 'notes',
                             'subtype': 'view',
                             'action': 'request',
@@ -71,7 +80,8 @@ en_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'view',
                             'action': 'request',
-                            'position': 'choice',
+                            'position': 'last',
+                            'number': 1,
                             'query': None}),
                 # My last 5 notes
                 (r'(my )?(last )?(\d+) notes',
@@ -97,15 +107,6 @@ en_templates = (
                             'position': 'last',
                             'number': 1,
                             'query': None}),
-                # #1 note
-                (r'\#?(\d+) note',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'id',
-                            'number': 1,
-                            'id': int(m.group(1)),
-                            'query': None}),
                )
 
 ru_templates = (
@@ -117,6 +118,15 @@ ru_templates = (
                             'position': 'id',
                             'number': 1,
                             'id': int(m.group(3)),
+                            'query': None}),
+                # #1 заметка
+                (r'\#?(\d+) заметка',
+                 lambda m: {'type': 'notes',
+                            'subtype': 'view',
+                            'action': 'request',
+                            'position': 'id',
+                            'number': 1,
+                            'id': int(m.group(1)),
                             'query': None}),
                 # Я хочу посмотреть дедпула
                 (r'(я )?(хочу|планирую|думаю) посмотреть (.+)а?',
@@ -168,7 +178,7 @@ ru_templates = (
                             'action': 'request',
                             'query': None}),
                 # Все заметки
-                (r'все заметки',
+                (r'(все )?заметки',
                  lambda m: {'type': 'notes',
                             'subtype': 'view',
                             'action': 'request',
@@ -187,7 +197,8 @@ ru_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'view',
                             'action': 'request',
-                            'position': 'choice',
+                            'position': 'last',
+                            'number': 1,
                             'query': None}),
                 # Моя последняя заметка
                 (r'(моя )?последняя заметка',
@@ -212,15 +223,6 @@ ru_templates = (
                             'action': 'request',
                             'position': 'last',
                             'number': 10,
-                            'query': None}),
-                # #1 заметка
-                (r'\#?(\d+) заметка',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'id',
-                            'number': 1,
-                            'id': int(m.group(1)),
                             'query': None}),
 
                )
