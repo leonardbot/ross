@@ -177,8 +177,8 @@ ru_templates = (
                             'subtype': 'add',
                             'action': 'request',
                             'query': None}),
-                # Все заметки
-                (r'(все )?заметки',
+                # Просмотреть все заметки
+                (r'((про|по)?смотреть )?(все )?заметки',
                  lambda m: {'type': 'notes',
                             'subtype': 'view',
                             'action': 'request',
