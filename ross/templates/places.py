@@ -30,9 +30,9 @@ en_templates = (
 
 ru_templates = (
                 # Где здесь находится ближайший Старбакс?
-                (r'где( здесь)? (находится|есть)( ближайший)? (.+)',
+                (r'где( здесь| тут)? (находится|есть)( ближайший)? (.+)',
                  lambda m: {'type': 'places',
-                            'subtype': 'search',
+                            'subtype': 'explore',
                             'action': 'question',
                             'query': m.group(4)}),
                 # Куда мне сходить сегодня вечером?
@@ -41,4 +41,10 @@ ru_templates = (
                             'subtype': 'explore',
                             'action': 'question',
                             'query': None}),
+                # Хочу сходить в бар
+                (r'хочу (сходить в бар|побухать|выпить)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'explore',
+                            'action': 'question',
+                            'query': 'бар'}),
                )
