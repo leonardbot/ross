@@ -9,7 +9,7 @@ Copyright (C) 2015
 
 en_templates = (
                 # write note
-                (r'(note|mark|write)( note)?$,
+                (r'(note|mark|write)( note)?$',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
@@ -19,13 +19,13 @@ en_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(3)}),
+                            'query': str(m.group(3))}),
                 # new note about geography lecture
                 (r'(new)?.?note (about)?.?(\W+.+|\w+.+)',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(2)}),
+                            'query': str(m.group(2))}),
                 # show all notes
                 (r'(show|display) (my|all|all my)?.?notes',
                  lambda m: {'type': 'notes',
@@ -110,7 +110,7 @@ en_templates = (
 
 ru_templates = (
                 # сделай заметку
-                (r'(создай|запиши|сделай)( заметку)?$,
+                (r'(создай|запиши|сделай)( заметку)?$',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
@@ -120,13 +120,13 @@ ru_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(4)}),
+                            'query': str(m.group(4))}),
                 # новая заметка про лекцию по географии
                 (r'(новая)?.?заметка (про|о|об)?.?(\W+.+|\w+.+)',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(3)}),
+                            'query': str(m.group(3))}),
                 # покажи все заметки
                 (r'(покажи|отобрази) (мои|все|все мои)?.?заметки',
                  lambda m: {'type': 'notes',
