@@ -19,13 +19,13 @@ en_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(3))}),
+                            'query': str(m.group(4))}),
                 # new note about geography lecture
                 (r'(new)?.?note (about)?.?(\W+.+|\w+.+)',
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': str(m.group(2))}),
+                            'query': str(m.group(3))}),
                 # show all notes
                 (r'(show|display) (my|all|all my)?.?notes',
                  lambda m: {'type': 'notes',
@@ -96,7 +96,7 @@ en_templates = (
                             'action': 'request',
                             'position': 'id',
                             'number': 1,
-                            'position': int(m.group(3)),
+                            'id': int(m.group(3)),
                             'query': None}),
                 # delete my last note
                 (r'delete (my)?.?(last|new) note',
@@ -197,7 +197,7 @@ ru_templates = (
                             'action': 'request',
                             'position': 'id',
                             'number': 1,
-                            'position': int(m.group(3)),
+                            'id': int(m.group(3)),
                             'query': None}),
                 # удали мою последнюю заметку
                 (r'удали (мою)?.?(последнюю|новую) заметку',
