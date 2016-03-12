@@ -60,7 +60,7 @@ ru_templates = (
                            'action': 'question',
                            'query': None}),
                 # Куда мне сходить сегодня вечером?
-                (r'куда( .+)? сходить',
+                (r'куда( .+)? (сходить|пойти)',
                  lambda m: {'type': 'places',
                             'subtype': 'explore',
                             'action': 'question',
