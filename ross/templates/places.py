@@ -15,16 +15,34 @@ en_templates = (
                             'action': 'question',
                             'query': m.group(3)}),
                 # Is there starbucks not far?
-                (r'(is|are) ?(there)? (.+?) (near there|near|there|not far|about)+',
+                (r'(is|are) ?(there)? (.+?) (near there|near|there|not far|about|around)+',
                 lambda m: {'type': 'places',
                            'subtype': 'search',
                            'action': 'question',
                            'query': m.group(3)}),
+                # What is around there?
+                (r'around there',
+                lambda m: {'type': 'places',
+                           'subtype': 'explore',
+                           'action': 'question',
+                           'query': None}),
                 # Where i can go today?
                 (r'where (i can|can i|to) go',
                  lambda m: {'type': 'places',
                             'subtype': 'explore',
                             'action': 'question',
+                            'query': None}),
+                # Cheap places around
+                (r'cheap places',
+                 lambda m: {'type': 'places',
+                            'subtype': 'explore',
+                            'action': 'request',
+                            'query': 'cheap'}),
+                # Places around
+                (r'places',
+                 lambda m: {'type': 'places',
+                            'subtype': 'explore',
+                            'action': 'request',
                             'query': None}),
                )
 
@@ -32,9 +50,15 @@ ru_templates = (
                 # Где здесь находится ближайший Старбакс?
                 (r'где( здесь| тут)? (находится|есть)( ближайший)? (.+)',
                  lambda m: {'type': 'places',
-                            'subtype': 'explore',
+                            'subtype': 'search',
                             'action': 'question',
                             'query': m.group(4)}),
+                # Что есть недалеко отсюда?
+                (r'(недалеко|близко) (здесь|отсюда)',
+                lambda m: {'type': 'places',
+                           'subtype': 'explore',
+                           'action': 'question',
+                           'query': None}),
                 # Куда мне сходить сегодня вечером?
                 (r'куда( мне)? сходить',
                  lambda m: {'type': 'places',
@@ -44,7 +68,19 @@ ru_templates = (
                 # Хочу сходить в бар
                 (r'хочу (сходить в бар|побухать|выпить)',
                  lambda m: {'type': 'places',
-                            'subtype': 'explore',
-                            'action': 'question',
+                            'subtype': 'search',
+                            'action': 'plans',
                             'query': 'бар'}),
+                # Дешевые места поблизости
+                (r'дешевые места',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': 'дешево'}),
+                # Места поблизости
+                (r'места',
+                 lambda m: {'type': 'places',
+                            'subtype': 'explore',
+                            'action': 'request',
+                            'query': None}),
                )
