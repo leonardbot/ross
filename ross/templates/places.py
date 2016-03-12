@@ -27,7 +27,7 @@ en_templates = (
                            'action': 'question',
                            'query': None}),
                 # Where i can go today?
-                (r'where (i can|can i|to) go',
+                (r'(i can|can i|to|can) go',
                  lambda m: {'type': 'places',
                             'subtype': 'explore',
                             'action': 'question',
@@ -60,7 +60,7 @@ ru_templates = (
                            'action': 'question',
                            'query': None}),
                 # Куда мне сходить сегодня вечером?
-                (r'куда( мне)? сходить',
+                (r'куда( .+)? сходить',
                  lambda m: {'type': 'places',
                             'subtype': 'explore',
                             'action': 'question',
