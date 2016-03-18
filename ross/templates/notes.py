@@ -227,4 +227,3 @@ ru_templates = (
                             'query': None}),
 
                )
-Status API Training Shop Blog About
