@@ -46,13 +46,13 @@ en_templates = (
                             'action': 'request',
                             'query': 'cheap'}),
                 # I want to eat
-                (r'eat',
+                (r' eat',
                  lambda m: {'type': 'places',
                             'subtype': 'search',
                             'action': 'request',
                             'query': 'cafe'}),
                 # I want to drink
-                (r'drink',
+                (r' drink',
                  lambda m: {'type': 'places',
                             'subtype': 'search',
                             'action': 'request',
