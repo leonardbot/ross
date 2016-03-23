@@ -9,7 +9,7 @@ Copyright (C) 2015
 
 en_templates = (
                 # Timer for 15 minutes
-                (r'timer (for |on )?(\d+) min(utes)?',
+                (r'timer (for |on )?(\d+) min(utes?)?',
                  lambda m: {'type': 'reminders',
                             'subtype': 'create',
                             'action': 'request',
@@ -26,7 +26,7 @@ en_templates = (
 
 ru_templates = (
                 # Таймер на 15 минут
-                (r'таймер (на )?(\d+) м(инут)?',
+                (r'таймер (на )?(\d+) м(инут(ы|а)?)?',
                  lambda m: {'type': 'reminders',
                             'subtype': 'create',
                             'action': 'request',
