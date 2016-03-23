@@ -47,12 +47,6 @@ en_templates = (
                )
 
 ru_templates = (
-                # Где здесь ближайший Старбакс?
-                (r'где (здесь|тут)( ближайший)? (.+)',
-                 lambda m: {'type': 'places',
-                            'subtype': 'search',
-                            'action': 'question',
-                            'query': m.group(3)}),
                 # Что есть недалеко отсюда?
                 (r'(недалеко|близко) (здесь|отсюда)',
                 lambda m: {'type': 'places',
@@ -71,6 +65,18 @@ ru_templates = (
                             'subtype': 'search',
                             'action': 'plans',
                             'query': 'бар'}),
+                # Кафе неподалеку
+                (r'(.+) (недалеко|неподал(е|ё)ку|близко|поблизости)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': m.group(1)}),
+                # Хочу покушать
+                (r'(по)?(кушать|есть|жрать)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': 'кафе'}),
                 # Дешевые места поблизости
                 (r'дешевые места',
                  lambda m: {'type': 'places',
@@ -83,4 +89,10 @@ ru_templates = (
                             'subtype': 'explore',
                             'action': 'request',
                             'query': None}),
+                # Хочу сходить в ресторан
+                (r'(ресторан|кафе|магазин|метро|фалафельная)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': m.group(1)}),
                )
