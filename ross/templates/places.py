@@ -8,6 +8,13 @@ Copyright (C) 2015
 """
 
 en_templates = (
+                # I want to go to the restourant
+                (r'(restourant|cafe|shop|market|metro|mall'
+                  '|ikea|bar|macdonalds|kfc|subway|burger king)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': m.group(1)}),
                 # Where is starbucks?
                 (r'where ?(is|are)? ?(nearest|near)? ?(.+)',
                  lambda m: {'type': 'places',
@@ -38,6 +45,18 @@ en_templates = (
                             'subtype': 'explore',
                             'action': 'request',
                             'query': 'cheap'}),
+                # I want to eat
+                (r'eat',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': 'cafe'}),
+                # I want to drink
+                (r'drink',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': 'bar'}),
                 # Places around
                 (r'places',
                  lambda m: {'type': 'places',
@@ -47,6 +66,13 @@ en_templates = (
                )
 
 ru_templates = (
+                # Хочу сходить в ресторан
+                (r'(ресторан|кафе|магазин|метро|фалафельная|торговый центр|тц'
+                  '|икея|бар|мак|макнодаль?дс|кфс|сабвэй|бургер кинг)',
+                 lambda m: {'type': 'places',
+                            'subtype': 'search',
+                            'action': 'request',
+                            'query': m.group(1)}),
                 # Что есть недалеко отсюда?
                 (r'(недалеко|близко) (здесь|отсюда)',
                 lambda m: {'type': 'places',
@@ -89,10 +115,4 @@ ru_templates = (
                             'subtype': 'explore',
                             'action': 'request',
                             'query': None}),
-                # Хочу сходить в ресторан
-                (r'(ресторан|кафе|магазин|метро|фалафельная)',
-                 lambda m: {'type': 'places',
-                            'subtype': 'search',
-                            'action': 'request',
-                            'query': m.group(1)}),
                )
