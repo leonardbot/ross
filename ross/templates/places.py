@@ -10,7 +10,7 @@ Copyright (C) 2015
 en_templates = (
                 # I want to go to the restourant
                 (r'(restourant|cafe|shop|market|metro|mall'
-                  '|ikea|bar|macdonalds|kfc|subway|burger king)',
+                  '|ikea|bar|macdonalds|kfc|subway|burger king|starbucks)',
                  lambda m: {'type': 'places',
                             'subtype': 'search',
                             'action': 'request',
@@ -68,7 +68,7 @@ en_templates = (
 ru_templates = (
                 # Хочу сходить в ресторан
                 (r'(ресторан|кафе|магазин|метро|фалафельная|торговый центр|тц'
-                  '|икея|бар|мак|макнодаль?дс|кфс|сабвэй|бургер кинг)',
+                  '|икея|бар|мак|макнодаль?дс|кфс|сабвэй|бургер кинг|старбакс)',
                  lambda m: {'type': 'places',
                             'subtype': 'search',
                             'action': 'request',
