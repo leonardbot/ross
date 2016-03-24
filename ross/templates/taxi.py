@@ -9,7 +9,7 @@ Copyright (C) 2015
 
 en_templates = (
                 # I want to get taxi
-                (r'get taxi',
+                (r'taxi',
                  lambda m: {'type': 'taxi',
                             'subtype': 'get',
                             'action': 'request',
@@ -18,7 +18,7 @@ en_templates = (
 
 ru_templates = (
                 # Мне нужно вызвать такси
-                (r'вызвать такси',
+                (r'такси',
                  lambda m: {'type': 'taxi',
                             'subtype': 'get',
                             'action': 'request',
