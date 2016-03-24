@@ -9,6 +9,13 @@ Copyright (C) 2015
 """
 
 en_templates = (
+                # All notes
+                (r'(all )?notes',
+                lambda m: {'type': 'notes',
+                           'subtype': 'view',
+                           'action': 'request',
+                           'position': 'all',
+                           'query': None}),
                 # My last notes
                 (r'(my )?(last )?notes',
                  lambda m: {'type': 'notes',
@@ -76,13 +83,6 @@ en_templates = (
                  lambda m: {'type': 'notes',
                             'subtype': 'add',
                             'action': 'request',
-                            'query': None}),
-                # All notes
-                (r'(all )?notes',
-                 lambda m: {'type': 'notes',
-                            'subtype': 'view',
-                            'action': 'request',
-                            'position': 'all',
                             'query': None}),
                 # View notes
                 (r'(view|my) notes',
